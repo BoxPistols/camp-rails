@@ -12,7 +12,7 @@ module CampRails
     config.generators do |g|
       g.stylesheets false   #styleシート
       g.javascripts false   #javascript
-      g.helper false        　#ヘルパー
+      g.helper false        #ヘルパー
       g.test_framework false #テストファイル
     end
   end
