@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Question.create(id: 1, name: "Test name 1", title: 'Test question 1', content: "content 1")
+# Question.create(id: 2, name: "Test name 2", title: 'Test question 2', content: "content 2")
+# Question.create(id: 3, name: "Test name 3", title: 'Test question 3', content: "content 3")
+Question.create(id: 1, name: "山下 妃里", title: '手前ルー・ルー攻め派', content: "狸はゆうべゴーシュとみんなにならて行っまし")
+Question.create(id: 2, name: "川西 樹里", title: '左ルー・ルー攻め派', content: "ほっとどうもゴーシュから夜中に結んたた")
+Question.create(id: 3, name: "村上 仁", title: '左ルー・せき止め派', content: "何そうにあとをすっばゴーシュへすわり込んましな")
