@@ -1,2 +1,22 @@
-<h1>Questions#new</h1>
-<p>Find me in app/views/questions/new.html.erb</p>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h2>新規質問投稿</h2>
+        <%= form_with model: @question, local: true do |f| %>
+            <div class="form-group">
+                <label for="">name</label>
+                <%= f.text_field :name, class:"form-control" %>
+            </div>
+            <div class="form-group">
+                <label for="">title</label>
+                <%= f.text_field :title, class:"form-control" %>
+            </div>
+            <div class="form-group">
+                <label for="">content</label>
+                <%= f.text_area :content, class:"form-control" %>
+            </div>
+            <div class="">
+                <%= f.submit "Submit" , class:"btn btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>

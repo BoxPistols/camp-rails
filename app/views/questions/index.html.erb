@@ -1,5 +1,4 @@
-<h1>Questions</h1>
-<p>QA Site</p>
+<h2>質問一覧</h2>
 
 <table class="table">
     <thead>
@@ -12,11 +11,14 @@
     <tbody>
         <% @questions.each do |qs| %>
             <tr>
-                <td><%= qs.id %></td>
-                <td><%= qs.title %></td>
+                <td>
+                    <%= qs.id %>
+                </td>
+                <td>
+                    <%= qs.title %>
+                </td>
                 <td>[edit] [delete]</td>
             </tr>
-        <% end %>
-
+            <% end %>
     </tbody>
 </table>
