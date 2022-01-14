@@ -20,7 +20,8 @@
                             <%= qs.title %>
                         </td>
                         <td>
-                            [<%= link_to "編集" , edit_question_path(qs) %>] [削除]
+                            [<%= link_to "編集" , edit_question_path(qs) %>] [<%= link_to "削除" , question_path(qs),
+                                    method: :delete, data:{confirm: "削除して良いですか？" } %>]
                         </td>
                     </tr>
                     <% end %>
