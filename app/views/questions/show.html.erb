@@ -1,2 +1,36 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<h2>詳細</h2>
+
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">title</th>
+                    <th scope="col">Menu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <%= @question.id %>
+                    </td>
+                    <td>
+                        <%= @question.title %>
+                    </td>
+                    <td>
+                        <%= @question.content %>
+                    </td>
+                    <td>
+                        [<%= link_to "編集" , edit_question_path(@question) %>] [<%= link_to "削除" ,
+                            question_path(@question), method: :delete, data:{confirm: "削除して良いですか？" } %>]
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <%= link_to 'New question' , new_question_path %>
+    </div>
+</div>

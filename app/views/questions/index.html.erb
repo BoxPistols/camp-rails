@@ -17,8 +17,7 @@
                             <%= qs.id %>
                         </td>
                         <td>
-                            <%= qs.title %>
-                        </td>
+                            <%= link_to qs.title, question_path(qs) %>  
                         <td>
                             [<%= link_to "編集" , edit_question_path(qs) %>] [<%= link_to "削除" , question_path(qs),
                                     method: :delete, data:{confirm: "削除して良いですか？" } %>]
