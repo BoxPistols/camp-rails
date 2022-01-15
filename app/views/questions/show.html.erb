@@ -30,56 +30,66 @@
             </tbody>
         </table>
     </div>
+</div>
 
-    <%= form_with model: [@question, @answer], local: true do |f| %>
-        <%= f.hidden_field :question_id, {value: @question.id } %>
-        <div class="form-group">
-            <label for="">name</label>
-            <%= f.text_field :name, class:"form-control" %>
-        </div>
-        <div class="form-group">
-            <label for="">content</label>
-            <%= f.text_area :content, class:"form-control" %>
-        </div>
-        <div class="">
-            <%= f.submit "Submit" , class:"btn btn-primary" %>
-        </div>
-    <% end %>
+<div class="container">
+    <div class="row">
+        <h3 class="mt-4">回答投稿</h3>
     </div>
 
-    <div class="container">
-        <div class="row">
-        <h3 class="mt-4">回答一覧</h3>
-        <table class="table table-striped">
-            <% if @question.answers.any? %>
-                <thead class="thead-light">
+    <div class="row">
+        <%= form_with model: [@question, @answer], local: true do |f| %>
+            <%= f.hidden_field :question_id, {value: @question.id } %>
+            <div class="form-group">
+                <label for="">name</label>
+                <%= f.text_field :name, class:"form-control" %>
+            </div>
+            <div class="form-group">
+                <label for="">content</label>
+                <%= f.text_area :content, class:"form-control" %>
+            </div>
+            <div class="">
+                <%= f.submit "Submit" , class:"btn btn-primary" %>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="container">
+<div class="row">
+    <h3 class="mt-4">回答一覧</h3>
+    <table class="table table-striped">
+        <% if @question.answers.any? %>
+            <thead class="thead-light">
                 <tr>
                     <td>Answer</td>
                     <td>Name</td>
                     <td>Menu</td>
                 </tr>
-                </thead>
+            </thead>
 
-                <tbody>
-                    <% @question.answers.each do |answer| %>
+            <tbody>
+                <% @question.answers.each do |answer| %>
                     <tr>
                         <td><%= answer.content %></td>
                         <td><%= answer.name %></td>
-                        <td>[<%= link_to 'Edit', edit_question_answer_path(@question, answer)%>]
-                        ['Detete']</td>
+                        <td>[<%= link_to 'Edit', edit_question_answer_path(@question, answer)%>] [<%=
+                            link_to "削除" , question_answer_path(@question, answer), method: :delete,
+                            data:{confirm: "削除して良いですか？" } %>]
+                        </td>
                     </tr>
-                    <% end %>
-                </tbody>
+                <% end %>
+            </tbody>
 
-            <% else %>
-                <p>No answer yet</p>
-            <% end%>
-        </table>
-        </div>
-    </div>
+        <% else %>
+            <p>No answer yet</p>
+        <% end%>
+    </table>
+</div>
+</div>
 
-
-    <div class="row">
-        <%= link_to 'New question' , new_question_path %>
-    </div>
+<div class="container">
+<div class="row">
+    <%= link_to 'New question' , new_question_path %>
+</div>
 </div>
