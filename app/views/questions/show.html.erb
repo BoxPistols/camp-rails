@@ -2,6 +2,7 @@
 
 <div class="container">
     <div class="row">
+        <h3 class="">質問</h3>
         <table class="table">
             <thead>
                 <tr>
@@ -28,6 +29,23 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <h3 class="mt-4">回答</h3>
+    <div class="row">
+    <%= form_with model: [@question, @answer], local: true do |f| %>
+        <div class="form-group">
+            <label for="">name</label>
+            <%= f.text_field :name, class:"form-control" %>
+        </div>
+        <div class="form-group">
+            <label for="">content</label>
+            <%= f.text_area :content, class:"form-control" %>
+        </div>
+        <div class="">
+            <%= f.submit "Submit" , class:"btn btn-primary" %>
+        </div>
+    <% end %>
     </div>
 
     <div class="row">
