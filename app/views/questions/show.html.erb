@@ -65,7 +65,8 @@
                     <tr>
                         <td><%= answer.content %></td>
                         <td><%= answer.name %></td>
-                        <td>['Edit']['Detete']</td>
+                        <td>[<%= link_to 'Edit', edit_question_answer_path(@question, answer)%>]
+                        ['Detete']</td>
                     </tr>
                     <% end %>
                 </tbody>
